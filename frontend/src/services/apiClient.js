@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api/v1'
+  baseURL: 'https://idea-chain-hub.onrender.com',
+  withCredentials: true
 });
+
 
 apiClient.interceptors.request.use((config) => {
   const token = localStorage.getItem('ideachain_token');
